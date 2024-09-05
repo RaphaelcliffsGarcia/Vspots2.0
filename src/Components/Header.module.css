@@ -1,0 +1,35 @@
+.header {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: #ece9e1;
+  top: 0px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}
+
+.Spotslink {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.Spotslink::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../Assets/mira.svg") no-repeat center center;
+  color: #333;
+  margin-left: 0.6rem;
+}
