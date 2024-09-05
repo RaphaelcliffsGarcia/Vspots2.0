@@ -5,14 +5,16 @@ import Vlogo from "../Assets/logov1.svg?react";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <nav className="container">
-        <Link to="/">
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to="/" aria-label="Vspots- Home">
           <Vlogo />
         </Link>
-        <Link to="/Spots">Spots</Link>
+        <Link className={styles.Spotslink} to="/Spots">
+          Spots
+        </Link>
       </nav>
-    </div>
+    </header>
   );
 };
 
