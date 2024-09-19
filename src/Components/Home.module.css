@@ -1,0 +1,55 @@
+/* Home.module.css */
+
+.containerHome {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Altura total da tela */
+  overflow: hidden; /* Garante que nada saia do contêiner */
+  display: flex; /* Habilita o flexbox */
+  align-items: center; /* Alinha verticalmente ao centro */
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Faz o vídeo preencher o contêiner completamente */
+  object-fit: cover; /* Faz o vídeo cobrir o contêiner mantendo a proporção */
+  opacity: 0.4; /* Define a opacidade do vídeo */
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; /* Posiciona a sobreposição na parte superior */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cobre todo o contêiner */
+  background-color: black; /* Cor da sobreposição */
+  z-index: -1;
+}
+.texto {
+  position: relative;
+  color: #ece9e1; /* Cor do texto */
+  z-index: 1; /* Garante que o texto fique acima do vídeo e da sobreposição */
+}
+
+.texto p {
+  margin-bottom: 20px; /* Espaço entre o título e o link */
+}
+.texto a {
+  color: #ece9e1; /* Cor do link */
+  font-size: 1.5rem; /* Tamanho da fonte do link */
+  text-decoration: none; /* Remove o sublinhado do link */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fundo semi-transparente para o link */
+  padding: 10px 20px; /* Espaçamento interno do link */
+  border-radius: 5px; /* Bordas arredondadas para o link */
+}

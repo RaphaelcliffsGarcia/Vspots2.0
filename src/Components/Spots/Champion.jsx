@@ -53,10 +53,13 @@ const Champion = () => {
         />
         <p>{champion.description}</p>
         <Swiper
+          style={{
+            "--swiper-pagination-color": "#fff",
+          }}
           slidesPerView={3}
           pagination={{ clickable: true }}
-          navigation
-          autoplay={true}
+          spaceBetween={10}
+          autoplay={{ delay: 3000 }}
           className={styles.abilitiesContainer}
         >
           {champion.abilities.map((ability) => (

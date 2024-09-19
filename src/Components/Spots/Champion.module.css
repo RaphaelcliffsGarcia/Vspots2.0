@@ -1,10 +1,15 @@
 .abilitiesContainer {
-  display: grid; /* Define o contêiner como grid */
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas de igual largura */
-  margin-top: 20px; /* Espaço acima da lista de imagens */
-  padding: 0; /* Remove padding padrão da lista */
-  list-style: none; /* Remove marcadores padrão da lista */
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
 }
+
+.ability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .abilitiesContainer img {
   background-color: #333;
 }
