@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  background: #ece9e1;
+  background: #333;
   top: 0px;
 }
 
@@ -13,15 +13,20 @@
   align-items: center;
   height: 4rem;
 }
-
+.nav h1 {
+  color: #ece9e1;
+  font-size: 1rem;
+  text-align: center;
+}
 .logo {
-  padding: 0.5rem 0;
+  padding-left: 100px;
 }
 
 .Spotslink {
-  color: #333;
+  color: #ece9e1;
   display: flex;
   align-items: center;
+  padding-right: 100px;
 }
 
 .Spotslink::after {
@@ -30,6 +35,6 @@
   width: 16px;
   height: 16px;
   background: url("../Assets/mira.svg") no-repeat center center;
-  color: #333;
+  color: #ece9e1;
   margin-left: 0.6rem;
 }
