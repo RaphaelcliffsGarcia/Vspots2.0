@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./Champion.module.css"; // Certifique-se de que este arquivo existe
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -64,11 +64,13 @@ const Champion = () => {
         >
           {champion.abilities.map((ability) => (
             <SwiperSlide key={ability.slot} className={styles.ability}>
-              <img
-                src={ability.displayIcon}
-                alt={ability.displayName}
-                className={styles.abilityIcon}
-              />
+              <Link to={`/Spots/Abilv`} key={ability.slot}>
+                <img
+                  src={ability.displayIcon}
+                  alt={ability.displayName}
+                  className={styles.abilityIcon}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

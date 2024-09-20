@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./vhero.module.css";
-import { Link } from "react-router-dom"; // Certifique-se de ter react-router-dom instalado
+import { Link } from "react-router-dom";
 
 const Vheroes = () => {
-  const [heroes, setHeroes] = React.useState([]); // Inicializa como array vazio
-  const [loading, setLoading] = React.useState(true); // Adiciona estado de carregamento
-  const [error, setError] = React.useState(null); // Adiciona estado de erro
+  const [heroes, setHeroes] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
     fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
@@ -16,7 +16,7 @@ const Vheroes = () => {
         return response.json();
       })
       .then((data) => {
-        setHeroes(data.data || []); // Ajusta conforme a estrutura da resposta
+        setHeroes(data.data || []);
         setLoading(false);
       })
       .catch((error) => {
@@ -27,31 +27,38 @@ const Vheroes = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // Mensagem de carregamento
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>; // Mensagem de erro
+    return <p>Error: {error.message}</p>;
   }
 
   return (
-    <section className="container">
+    <section>
       <div className={styles.heroSec}>
-        <h1>Escolha o Herói</h1>
-        <section className={`${styles.heroes} animeLeft`}>
+        <section className={styles.heroes}>
           {heroes.length === 0 ? (
-            <p>No heroes found.</p> // Mensagem caso não haja heróis
+            <p>No heroes found.</p>
           ) : (
             heroes.map((hero) => (
               <Link to={`/Spots/Champion/${hero.uuid}`} key={hero.uuid}>
-                <img
-                  src={hero.displayIcon}
-                  alt={hero.displayName}
-                  className={styles.heroImage}
-                />
+                <div className={styles.heroWrapper}>
+                  <img
+                    src={hero.displayIcon}
+                    alt={hero.displayName}
+                    className={styles.heroImage}
+                  />
+                </div>
               </Link>
             ))
           )}
+        </section>
+        <section className={styles.heroestext}>
+          <h1>
+            Escolha o seu campeão favorito para aprender <br></br>
+            os seus melhores spots em cada mapa
+          </h1>
         </section>
       </div>
     </section>

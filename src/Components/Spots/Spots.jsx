@@ -2,13 +2,15 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Vheroes from "./Vheroes";
 import Champion from "./Champion";
+import Abilv from "./Abilv"; // Importação correta
 
 const Spots = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Vheroes />} />
-        <Route path="/Champion/:uuid" element={<Champion />} />
+        <Route path="Champion/:uuid" element={<Champion />} />
+        <Route path="Abilv" element={<Abilv />} /> {/* Sem a barra inicial */}
       </Routes>
     </div>
   );
